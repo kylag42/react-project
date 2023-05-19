@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import {AboutPage, CampsiteDetailPage, CampsitesDirectoryPage, ContactPage, HomePage } from '../pages';
 import { Header, Footer } from '../components';
 import { fetchCampsites } from '../features/campsites/campsitesSlice';
+import { fetchPartners } from '../features/partners/partnersSlice';
 import './App.css';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
 
     useEffect(() => {
         dispatch(fetchCampsites());
+        dispatch(fetchPartners());
     }, [dispatch]);
 
     return (
